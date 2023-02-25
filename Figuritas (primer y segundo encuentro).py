@@ -5,27 +5,27 @@ repeticiones = 1000
 tengo_figus = 45
 
 def cuantas_figus(figuritas):
-    album = [0]*figuritas
+    album = [0] * figuritas
     contador = 0
-    while sum(album)<figuritas:
+    while sum(album) < figuritas:
         figu = random.randint(0,figuritas-1)
-        contador = contador+1
+        contador = contador + 1
         album[figu] = 1
     return(contador)
 
-def lista_repes(repes,figuritas): 
+def lista_repes(repes, figuritas): 
     lista=[]
-    while len(lista)<repes:
+    while len(lista) < repes:
         album_completo = cuantas_figus(figuritas)
         lista.append(album_completo)
     return lista
 
-def promedio_lista(lista,repes):
+def promedio_lista(lista, repes):
     promedio = sum(lista)/repes
     return promedio
 
 lista1 = lista_repes(repeticiones, figus_total)
-promedio1 = promedio_lista(lista1,repeticiones)
+promedio1 = promedio_lista(lista1, repeticiones)
 print("El promedio de figuritas necesarias para completar un álbum de " + str(figus_total) + " figuritas es: " + str(promedio1))
 
 def chances_completar_album(lista, puedo_comprar):
